@@ -1,0 +1,43 @@
+{\bf [25 points] Multiple Sequence Alignment (MSA)}\\
+\begin{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item  We discussed in class a method to align two strings using dynamic programming. Consider now the problem of multiple sequence alignment, where more than 2 sequences are simultaneously aligned to each other. The MSA problem is NP-Hard, as is typically approximated using heuristics. One example is the Star MSA method method:\\
+To align a given set of strings S:
+\begin{itemize}
+    \item Build all optimal pairwise alignments
+    \item Select the string $S_c$ such that $S_c$ is the most similar to all of the other strings. $S_c$ should minimize $\sum_{i \neq c} a(S_i, S_c)$, where $a(S_i, S_c)$ is the optimal pairwise cost
+    \item Align the remaining strings to $S_c$
+\end{itemize}
+For the following set of strings S, use the Star MSA method to select $S_c$ and write out the optimal alignment of all strings. The scoring parameters are (match $m=2$, mismatch $n=-1$, gap $g=-1$, and gaps that align with each other do not contribute to the score).
+\begin{align*}
+Seq1& \texttt{  TCGAATC}\\
+Seq2& \texttt{  CCCCGAA	}\\
+Seq3& \texttt{  TTCGAAC}\\
+\end{align*}
+
+\begin{solution}
+Add your solution here.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item The selection of $S_c$ will vary based on the scoring parameters. Give new parameters for the mismatch and gap cost such that a new $S_c$ is chosen.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+Add your solution here.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item A common application of MSA is to find consensus sequences among a set of strings. Provide an additional biological application where multiple sequence alignment would be helpful.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+Add your solution here.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Report the longest consensus sequence in the set of strings in msa.fa. You can use code to help you.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+Add your solution here.
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{itemize}

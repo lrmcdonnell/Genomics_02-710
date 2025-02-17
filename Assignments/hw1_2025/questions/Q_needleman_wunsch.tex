@@ -1,0 +1,36 @@
+{\bf [25 points] Local Sequence Alignment}\\
+
+
+{\textbf{You should implement the dynamic programming from scratch in Python 3.}}
+\vspace{0.1in}
+
+Complete the function \texttt{smith\_waterman} in the python script \textbf{\texttt{SW.py}} to implement the Smith-Waterman algorithm with the scoring function below:
+
+\[
+  \begin{tabular}{l r}
+  Match:    & 2 \\
+  Mismatch: & -2 \\
+  Gap:      & -1
+  \end{tabular}
+\]
+
+ 
+\fbox{\parbox{0.9\textwidth}{
+                \textbf{Note: }{Your code is graded by an autograder. You may use the \texttt{numpy} Python package if desired. The script should be able to run with command line:\\
+
+\texttt{python SW.py example.fasta}\\
+
+The \texttt{smith\_waterman} function should return 3 values: the alignment score, the alignment in the first sequence, and the alignment in the second sequence. The alignment score should be an integer, and the two alignments should be strings with no whitespace. Use a dash `-' to indicate gaps.\\
+
+See the following snippet of code for an example:\\
+\fbox{\parbox{0.75\textwidth}{
+                \texttt{> > score, align1, align2 = smith\_waterman(`GGTTGACTA', \\`TGTTACGG')}\\
+                \texttt{> > print(score, `\textbackslash n', align1, `\textbackslash n', align2) }\\
+\texttt{9}\\
+\texttt{GTTGAC}\\
+\texttt{GTT-AC}}}
+}\\
+\\
+\textit{Hint: You may have to specifically test for edge cases (e.g., allowing for the output to begin with an indel (gap), handling multiple indels in a row, handling inputs that differ drastically in length).}
+
+}}

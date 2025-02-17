@@ -1,0 +1,38 @@
+{\bf [25 points] MinHash}\\
+\\
+The MinHash sketch measures the Jaccard index (resemblance) of two sets by storing the $n$ minimum hash values of each set; the proportion of the $n$ minimum hash values of the union that are shared by both sets is an estimate of the Jaccard index. Obviously, to get a reasonable error, you will want $n$ to be large (you get roughly \(O(1/\sqrt{n})\) additive error).
+
+MinHash has been applied to biological sequences to measure similarity by measuring the Jaccard index of the set of `k-mers' (length-\(k\) substrings) of a sequence. For example, the string \texttt{AACCGGTT} has 4-mers \texttt{AACC}, \texttt{ACCG}, \texttt{CCGG}, \texttt{CGGT}, \texttt{GGTT}.
+
+Complete the function \texttt{minhash} in the python script minhash.py to implement the Minhash algorithm for comparing two genomes. The function take as input a fasta file with two genomes and an argument specifying the length $k$ of the k-mers. It should compute the Jaccard index of their k-mer sets to an expected error of $\pm$0.1. You will need to determine how many hash values to take to achieve this goal.
+
+\fbox{\parbox{0.9\textwidth}{
+                \textbf{Note: }{Your code is graded by an autograder. You may use the \texttt{numpy} or \texttt{hashlib} Python packages if desired. The script should be able to run with command line:\\
+
+\texttt{python minhash.py example.fasta k}\\
+
+The \texttt{minhash} function should return 1 value: the Jaccard index. \\%The alignment score should be an integer, and the two alignments should be strings with no whitespace. Use a dash `-' to indicate gaps.\\
+
+See the following snippet of code for an example:\\
+\fbox{\parbox{0.75\textwidth}{
+                \texttt{> > score = minhash(`GGTTGACTA', `TGTTACGG' ,2)}\\
+                \texttt{> > print(score) }\\
+\texttt{0.66}}}
+}\\
+\\
+Similarly, using the coronavirus example fasta provided with the code package, running 
+\\
+
+\texttt{   python3 minhash.py two\_coronaviruses.fa 8} 
+\\
+
+should return something like
+\\
+
+\texttt{   Score: 0.31}
+\\
+
+keeping in mind that the exact score may vary a little bit depending on the random hash function you choose.
+
+}}
+
